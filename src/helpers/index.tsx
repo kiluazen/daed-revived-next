@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import { cookies } from 'next/headers'
 
 export const randomUnsplashImageURL = (sig: string, width: number, height: number) =>
-  `https://source.unsplash.com/random/${width}x${height}?goose&sig=${sig}`
+  `https://picsum.photos/seed/goose-${sig}/${width}/${height}`
 
 export const decodeJWTFromCookie = () => {
   const jwtToken = cookies().get('jwtToken')
